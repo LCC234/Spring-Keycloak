@@ -1,0 +1,34 @@
+{
+  "exp": 1650446591,
+  "iat": 1650446291,
+  "auth_time": 1650445515,
+  "jti": "9550119b-6bc0-48f3-87bb-69385ea5a514",
+  "iss": "http://localhost:8180/auth/realms/SecondR",
+  "aud": "account",
+  "sub": "01400f5d-074a-4fba-b6cb-d42148743acc",
+  "typ": "Bearer",
+  "azp": "clienttest",
+  "session_state": "160c5266-a2cc-4f22-8d6d-e5338564c163",
+  "acr": "0",
+  "realm_access": {
+    "roles": [
+      "offline_access",
+      "admin",
+      "uma_authorization",
+      "default-roles-secondr"
+    ]
+  },
+  "resource_access": {
+    "account": {
+      "roles": [
+        "manage-account",
+        "manage-account-links",
+        "view-profile"
+      ]
+    }
+  },
+  "scope": "openid email profile",
+  "sid": "160c5266-a2cc-4f22-8d6d-e5338564c163",
+  "email_verified": false,
+  "preferred_username": "admintest"
+}

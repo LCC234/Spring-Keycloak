@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+keycloak:
+  auth-server-url: http://localhost:8180/auth
+  realm: SecondR
+  resource: clienttest
+  credentials.secret: bYlhEcr3dpwuPAlSMHvZWiMrNB04Ve2K
+  use-resource-role-mappings: false
+  ssl-required: none
+  #public-client: true
+  #bearer-only: true
+  securityConstraints[0].authRoles[0]: admin
+  securityConstraints[0].securityCollections[0].name: admin stuff
+  securityConstraints[0].securityCollections[0].patterns[0]: /employees/*
+  securityConstraints[0].securityCollections[0].patterns[1]: /private/*
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/testing?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: password
+    hikari:
+      initialization-fail-timeout: 0
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
